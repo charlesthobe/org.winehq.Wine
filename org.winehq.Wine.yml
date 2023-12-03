@@ -578,3 +578,14 @@ modules:
         url: https://github.com/refi64/zypak
         tag: v2022.04
         commit: 55a60d110301e8dd37b631503c3524ab7baaf7aa
+
+  - name: wrapper-work
+    buildsystem: simple
+    build-commands:
+      - cd /app/bin && mv wine whisky
+      - cd /app/bin && mv wine64 whisky64
+      - install -Dm 755 wine -t /app/bin
+      - install -Dm 755 wine64 -t /app/bin
+    sources:
+      - type: dir
+        path: files
